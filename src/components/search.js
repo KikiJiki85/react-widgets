@@ -25,10 +25,8 @@ const Search = () => {
                     srsearch: debouncedTerm
                 }
             });
-
             setResults(data.query.search);
         };
-
         search();
 
     }, [debouncedTerm]);
