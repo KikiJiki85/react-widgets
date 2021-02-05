@@ -19,8 +19,8 @@ const items = [
 ];
 
 const options = [
-    {label: 'The color Red', value: 'red'},
-    {label: 'The color Green', value: 'green'},
+    {label: 'The Color Red', value: 'red'},
+    {label: 'The Color Green', value: 'green'},
     {label: 'The Shade of Blue', value: 'blue'},
 ];
 
