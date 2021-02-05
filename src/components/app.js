@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Accordion from './accordion';
 import Search from './search';
 import Dropdown from './dropdown';
@@ -26,11 +26,17 @@ const options = [
 
 
 const App = () => {
+    const [selected, setSelected] = useState(options[0]);
+
     return (
         <React.Fragment>
             {/* <Accordion items={items}/> */}
             {/* <Search /> */}
-            <Dropdown options={options}/>
+            <Dropdown 
+                options={options}
+                selected={selected}
+                onSelectedChange={setSelected}
+            />
         </React.Fragment>
     );
 };
