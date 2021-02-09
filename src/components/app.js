@@ -3,6 +3,7 @@ import Accordion from './accordion';
 import Search from './search';
 import Dropdown from './dropdown';
 import Translate from './translate';
+import Route from './route';
 
 const items = [
     {
@@ -25,22 +26,31 @@ const options = [
     {label: 'The Shade of Blue', value: 'blue'},
 ];
 
-
 const App = () => {
-    // const [selected, setSelected] = useState(options[0]);
+    const [selected, setSelected] = useState(options[0]);
 
     return (
-        <React.Fragment>
-            {/* <Accordion items={items}/> */}
-            {/* <Search /> */}
-            {/* <Dropdown 
-                options={options}
-                selected={selected}
-                onSelectedChange={setSelected}
-            /> */}
+        <>
+           <Route path="/">
+                <Accordion items={items}/>
+           </Route>
 
-            <Translate />
-        </React.Fragment>
+           <Route path="/list">
+                <Search />
+           </Route>
+
+           <Route path="/dropdown">
+                <Dropdown 
+                    label="Select a color" 
+                    options={options}
+                    selected={selected}
+                    onSelectedChange={setSelected} />
+           </Route>
+
+           <Route path="/translate">
+                <Translate />
+           </Route>
+        </>
     );
 };
 
